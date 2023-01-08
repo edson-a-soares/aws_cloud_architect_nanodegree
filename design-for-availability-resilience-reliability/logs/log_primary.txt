@@ -1,0 +1,79 @@
+ubuntu@ip-10-1-10-183:~$ mysql -h udacity-db-instance.ctnqsjxfwsah.us-east-1.rds.amazonaws.com -P 3306 -u udacity_admin -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 215
+Server version: 8.0.28 Source distribution
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.03 sec)
+
+mysql> USE udacity;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.01 sec)
+
+mysql> CREATE TABLE movies(title VARCHAR(50) NOT NULL, genre VARCHAR(30) NOT NULL, PRIMARY KEY(title));
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| movies            |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM movies;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO movies VALUE ("Joker", "psychological thriller");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM movies;
++-------+------------------------+
+| title | genre                  |
++-------+------------------------+
+| Joker | psychological thriller |
++-------+------------------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO movies VALUE ("Gone with the Wind", "romance");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO movies VALUE ("John Wick", "action");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO movies VALUE ("Star Wars", "fiction");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO movies VALUE ("Fred Kruger", "terror");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM movies;
++--------------------+------------------------+
+| title              | genre                  |
++--------------------+------------------------+
+| Fred Kruger        | terror                 |
+| Gone with the Wind | romance                |
+| John Wick          | action                 |
+| Joker              | psychological thriller |
+| Star Wars          | fiction                |
++--------------------+------------------------+
+5 rows in set (0.00 sec)

@@ -1,0 +1,88 @@
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1026-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Dec  8 04:25:36 UTC 2022
+
+  System load:  0.0               Processes:             99
+  Usage of /:   23.0% of 7.57GB   Users logged in:       0
+  Memory usage: 25%               IPv4 address for eth0: 10.5.145.97
+  Swap usage:   0%
+
+
+10 updates can be applied immediately.
+9 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Thu Dec  8 04:15:36 2022 from 18.237.140.163
+ubuntu@ip-10-5-145-97:~$ mysql -h udacity.cqp6b8fwhims.us-west-2.rds.amazonaws.com -P 3306 -u udacity_admin -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.28 Source distribution
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> USE udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| movies            |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM movies;
++--------------------+------------------------+
+| title              | genre                  |
++--------------------+------------------------+
+| Fred Kruger        | terror                 |
+| Gone with the Wind | romance                |
+| John Wick          | action                 |
+| Joker              | psychological thriller |
+| Star Wars          | fiction                |
++--------------------+------------------------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO movies VALUE ("Harry Potter", "fiction");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM movies;
++--------------------+------------------------+
+| title              | genre                  |
++--------------------+------------------------+
+| Fred Kruger        | terror                 |
+| Gone with the Wind | romance                |
+| Harry Potter       | fiction                |
+| John Wick          | action                 |
+| Joker              | psychological thriller |
+| Star Wars          | fiction                |
++--------------------+------------------------+
+6 rows in set (0.01 sec)
+
+mysql> 

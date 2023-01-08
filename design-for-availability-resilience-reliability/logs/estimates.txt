@@ -1,0 +1,32 @@
+RTO: Recover Time Objective (RTO) is the maximum time your platform or service can be unavailable. If your platform is offline from noon until 5:00pm and you have a 4 hour RTO, then you have failed to maintain your RTO.
+
+1. Minimum RTO for a single AZ outage
+
+RTO is the time to switch to a standby replica in another Availability Zone.
+Which can take from 60s to 120s.
+
+An minimum RTO of 60s.
+Reference: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html
+
+2. Minimum RTO for a single region outage
+
+ - 00:00 - Problem happens (0 min)
+ - 00:05 - An amount of time passes before an alert triggers (5 min)
+ - 00:06 - Alert triggers on-all staff (1 min)
+ - 00:16 - On-call staff may need to get out of bed, get to computer, log in (10 min)
+ - 00:31 - Promote existing replica to master (15min ~ can take several minutes or longer to complete, depending on the size of the read replica)
+ - 00:46 - Reconfigure the application to the new database. (5 min)
+
+A minimum RTO of 1 hour would be reasonable.
+Reference: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html
+
+RPO: The Recovery Point Objective (RPO) is a measure of how much data is lost during an incident. In a situation where you have an unintended change made to a database, the amount of time between the system being taken offline and the last backup is the RPO.
+
+3. Minimum RPO for a single AZ outage
+
+RPO is 0 as we have a separate synchronous copy of the volume being maintained in a separate data center (AZ).
+
+4. Minimum RPO for a single region outage
+
+We should consider a minimum RPO of 5 min (time to save the transaction logs on S3), because we can't calculate the replica lag,
+which is the amount of time that the replica is behind the source database.
