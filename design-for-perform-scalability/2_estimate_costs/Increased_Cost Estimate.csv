@@ -1,0 +1,33 @@
+﻿Estimate summary
+Upfront cost,Monthly cost,Total 12 months cost,Currency
+0,19449.916,233398.99,USD
+,,* Includes upfront cost
+
+
+Detailed Estimate
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+"My Estimate,US East (N. Virginia),web-servers,Amazon EC2 ,0,801.8879999999999,9622.66,USD,""Tenancy (Shared Instances), Operating system (Linux), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 8), Enable (enabled), Advance EC2 instance (t3.large), Pricing strategy (On-Demand), Storage amount (30 GB), Snapshot Frequency (No snapshot storage), General Purpose SSD (gp3) - Throughput (1000 MBps)"""
+"My Estimate,US East (N. Virginia),application-servers,Amazon EC2 ,0,812.4,9748.80,USD,""Tenancy (Shared Instances), Operating system (Linux), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 8), Enable (enabled), Advance EC2 instance (c5.large), Pricing strategy (On-Demand), Storage amount (30 GB), Snapshot Frequency (No snapshot storage), General Purpose SSD (gp3) - Throughput (1000 MBps)"""
+"My Estimate,US East (N. Virginia),database-main,Amazon RDS for PostgreSQL,0,4587.452,55049.42,USD,""Storage volume (General Purpose SSD (gp2)), Storage amount (200 GB), Nodes (2), Instance Type (db.m5.12xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Single-AZ), Pricing Model (Reserved), Lease Offering Term (1yr), Purchase Option (No Upfront), Additional backup storage (200 GB), Total Size of Backup Processed for Export (GB) (200 per month)"""
+My Estimate,US East (N. Virginia),cloudfront-bucket,S3 Standard,0,23,276.00,USD,S3 Standard storage (1000 GB per month)
+"My Estimate,US East (N. Virginia),cloudfront-bucket,Data Transfer,0,0,0.00,USD,""DT Inbound: All other regions (0 GB per month), DT Outbound: Amazon CloudFront (0 TB per month)"""
+My Estimate,US East (N. Virginia),web-servers-load-balancer,Application Load Balancer,0,8046.43,96557.16,USD,Number of Application Load Balancers (1)
+"My Estimate,US East (N. Virginia),application-servers-load-balancer,Network Load Balancer,0,1111.43,13337.16,USD,""Number of Network Load Balancers (1), Processed bytes per NLB for TCP (250 GB per hour), Average TCP connection duration (2 seconds), Average number of new TCP connections (1000 per second)"""
+"My Estimate,US East (N. Virginia),DNS,Amazon Route 53,0,913,10956.00,USD,""Hosted Zones (1), Number of Elastic Network Interfaces (10), Basic Checks Within AWS (50)"""
+My Estimate,US East (N. Virginia),networking,VPN Connection,0,0,0.00,USD,Working days per month (22)
+My Estimate,US East (N. Virginia),networking,Network Address Translation (NAT) Gateway,0,157.86,1894.32,USD,Number of NAT Gateways (2)
+"My Estimate,US East (N. Virginia),monitoring,Amazon CloudWatch,0,56.550000000000004,678.60,USD,""Number of Metrics (includes detailed and custom metrics) (10), Standard Logs: Data Ingested (100 GB), Number of Custom/Cross-account events (100000), Number of Dashboards (4)"""
+"My Estimate,US East (N. Virginia),database-replica,Amazon RDS for PostgreSQL,0,1552.866,18634.39,USD,""Storage volume (General Purpose SSD (gp2)), Storage amount (200 GB), Nodes (2), Instance Type (db.m5.4xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Single-AZ), Pricing Model (Reserved), Lease Offering Term (1yr), Purchase Option (No Upfront), Additional backup storage (0 GB)"""
+"My Estimate,US East (N. Virginia),firewall,AWS Web Application Firewall (WAF),0,1250,15000.00,USD,""Number of Web Access Control Lists (Web ACLs) utilized (10 per month), Number of Rules added per Web ACL (10 per month), Number of Rule Groups per Web ACL (10 per month), Number of Rules inside each Rule Group (10 per month)"""
+My Estimate,US East (N. Virginia),,AWS Web Application Firewall (WAF),0,50,600.00,USD,Number of Web Access Control Lists (Web ACLs) utilized (10 per month)
+My Estimate,US East (N. Virginia),CDN,Amazon CloudFront,0,87.04,1044.48,USD,Data transfer out to internet (1 TB per month)
+
+
+,,,EC2- increased number of instances from total 4 to 8 for the Web Servers and also for the Application Servers,,,
+,,,RDS - increased number of instances from 1 to 2. One master and relica per availability zone,,,
+,,,Route 53 - increased number of Elastic Network Instances from 5 to 10,,,
+,,,VPC - increased number of NAT Gateways from 1 to 2. One per availability zone,,,
+,,,Application Load Balancer - increased number of processed GB per month,,,
+,,,Network Load Balancer - increased number of processed GB per month,,,
+,,,CouldWatch - increased number of logs and metrics,,,
+,,,Web Application Firewall- introduced web application firewall,,,

@@ -1,0 +1,25 @@
+﻿Estimate summary
+Upfront cost,Monthly cost,Total 12 months cost,Currency
+0,8760.914,105130.97,USD
+,,* Includes upfront cost
+
+
+Detailed Estimate
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),web-servers,Amazon EC2 ,0,400.94399999999996,4811.33,USD,"Tenancy (Shared Instances), Operating system (Linux), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 4), Enable (enabled), Advance EC2 instance (t3.large), Pricing strategy (), Storage amount (30 GB), Snapshot Frequency (No snapshot storage), General Purpose SSD (gp3) - Throughput (1000 MBps)"
+My Estimate,US East (N. Virginia),application-servers,Amazon EC2 ,0,406.19999999999993,4874.40,USD,"Tenancy (Shared Instances), Operating system (Linux), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 4), Enable (enabled), Advance EC2 instance (c5.large), Pricing strategy (), Storage amount (30 GB), Snapshot Frequency (No snapshot storage), General Purpose SSD (gp3) - Throughput (1000 MBps)"
+My Estimate,US East (N. Virginia),database-main,Amazon RDS for PostgreSQL,0,3688.16,44257.92,USD,"Storage volume (General Purpose SSD (gp2)), Storage amount (200 GB), Nodes (1), Instance Type (db.m5.12xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Single-AZ), Pricing Model (OnDemand), Additional backup storage (200 GB), Total Size of Backup Processed for Export (GB) (200 per month)"
+My Estimate,US East (N. Virginia),cloudfront-bucket,S3 Standard,0,23,276.00,USD,S3 Standard storage (1000 GB per month)
+My Estimate,US East (N. Virginia),cloudfront-bucket,Data Transfer,0,0,0.00,USD,"DT Inbound: All other regions (0 GB per month), DT Outbound: Amazon CloudFront (0 TB per month)"
+My Estimate,US East (N. Virginia),web-servers-load-balancer,Application Load Balancer,0,1476.43,17717.16,USD,Number of Application Load Balancers (1)
+My Estimate,US East (N. Virginia),application-servers-load-balancer,Network Load Balancer,0,1111.43,13337.16,USD,"Number of Network Load Balancers (1), Processed bytes per NLB for TCP (250 GB per hour), Average TCP connection duration (2 seconds), Average number of new TCP connections (1000 per second)"
+My Estimate,US East (N. Virginia),DNS,Amazon Route 53,0,456.75,5481.00,USD,"Hosted Zones (1), Number of Elastic Network Interfaces (5)"
+My Estimate,US East (N. Virginia),networking,VPN Connection,0,0,0.00,USD,Working days per month (22)
+My Estimate,US East (N. Virginia),networking,Network Address Translation (NAT) Gateway,0,78.93,947.16,USD,Number of NAT Gateways (1)
+My Estimate,US East (N. Virginia),monitoring,Amazon CloudWatch,0,56.550000000000004,678.60,USD,"Number of Metrics (includes detailed and custom metrics) (10), Standard Logs: Data Ingested (100 GB), Number of Custom/Cross-account events (100000), Number of Dashboards (4)"
+My Estimate,US East (N. Virginia),database-replica,Amazon RDS for PostgreSQL,0,1062.52,12750.24,USD,"Storage volume (General Purpose SSD (gp2)), Storage amount (200 GB), Nodes (1), Instance Type (db.m5.4xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Single-AZ), Pricing Model (OnDemand), Additional backup storage (0 GB)"
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
