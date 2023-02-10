@@ -1,0 +1,23 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service,
+identify at least 2 obvious poor practices as it relates to security. Include justification.
+
+Most poor practices are obvious violations to the least-privilege principle, which is a best practice advocated by AWS.
+https://en.wikipedia.org/wiki/Principle_of_least_privilege
+
+# Poor practice 1
+
+All security groups have defined CIDR ranges (i.e., egress and ingress) as 0.0.0.0/0.
+ With such configuration, it will be opened to communicate from/to any IP. 0.0.0.0/0 means access from the whole Internet.
+
+# Poor practice 2
+
+The Web Service instance is in a public subnet when there is a private one available. The Load Balancer could be in
+ the public subnet with the Web Service instance in the private one. That way it would be possible to have more control
+ of whose accessing it.
+
+# Extra Poor practices
+
+ - VPC configurations have DestinationCidrBlock defined as 0.0.0.0/0, which would make it possible to share information
+ with any IP in case there is a breach.
+ - The created IAM role have full access to S3 resources. It should only have access to specific buckets and only to
+ perform the necessary actions.

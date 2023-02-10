@@ -1,0 +1,53 @@
+# Identify tools that will allow you to do the following:
+
+    a. Scan infrastructure as code templates.
+    b. Scan AMI’s or containers for OS vulnerabilities.
+    c. Scan an AWS environment for cloud configuration vulnerabilities.
+
+    For each tool - identify an example compliance violation or vulnerability that it might expose.
+
+## Scan infrastructure as code templates
+
+    Terrascan
+
+    Sources:
+        - https://runterrascan.io
+        - https://spectralops.io/blog/developers-guide-to-iac-scanning
+
+### Example vulnerability
+
+    EBS/S3 not encrypted
+    Ingress open to 0.0.0.0/0 the whole internet
+    IAM policies non-compliant with the least-privilege permissions (i.e., full "*:*" administrative privileges)
+
+## Scan AMI’s or containers for OS vulnerabilities
+
+    Anchore
+
+    Sources:
+        - https://www.devopsschool.com/blog/top-container-vulnerability-scanning-tools
+        - https://anchore.com/blog/identifying-vulnerabilities-with-anchore
+
+### Example vulnerability
+
+    Libraries and Images may have bugs and security vulnerabilities.
+
+    ## The below produces the following output:
+    anchore-cli image vuln docker.io/username/application-name:latest non-os
+
+    Vulnerability ID                               Package                       Severity        Fix                     Vulnerability URL
+    SNYK-JAVA-COMFASTERXMLJACKSONCORE-72448        jackson-databind-2.9.7        High            ! <2.6.7.2              https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72448
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+
+    AWS Config
+
+### Example vulnerability
+
+    Unsecured users
+    No policy for passwords
+    Not enable MFA for users
+    Public access for S3 Buckets
+
+    Sources:
+        - https://geekflare.com/aws-vulnerability-scanner

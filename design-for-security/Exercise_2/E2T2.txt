@@ -1,0 +1,53 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+AWS Config (Non-Compliant Rules)
+
+    securityhub-alb-http-drop-invalid-header-enabled-fe1ebd48
+    securityhub-alb-http-to-https-redirection-check-54de243f
+    securityhub-acm-certificate-expiration-check-a26375bd
+    securityhub-ec2-ebs-encryption-by-default-74ed6f90
+    securityhub-ec2-instance-managed-by-ssm-f078bc10
+    securityhub-ec2-security-group-attached-to-eni-periodic-d43744f1
+    securityhub-ec2-instance-no-public-ip-66b8c675
+    securityhub-ec2-imdsv2-check-e1cc994e
+
+AWS Inspector
+
+    Port range 0 to 65535 is reachable from an Internet Gateway
+    Port 22 is reachable from an Internet Gateway
+    Port 80 is reachable from an Internet Gateway
+    Port 5000 is reachable from an Internet Gateway
+
+AWS SecurityHub
+
+    Avoid the use of the "root" account
+    Ensure a support role has been created to manage incidents with AWS Support
+    Ensure a log metric filter and alarm exist for AWS Config configuration changes
+    Ensure a log metric filter and alarm exist for S3 bucket policy changes
+    Ensure a log metric filter and alarm exist for disabling or scheduled deletion of customer created CMKs
+    Ensure a log metric filter and alarm exist for AWS Management Console authentication failures
+    Ensure a log metric filter and alarm exist for CloudTrail configuration changes
+    Ensure a log metric filter and alarm exist for IAM policy changes
+    Ensure a log metric filter and alarm exist for Management Console sign-in without MFA
+    Ensure a log metric filter and alarm exist for unauthorized API calls
+    Ensure a log metric filter and alarm exist for VPC changes
+    Ensure a log metric filter and alarm exist for route table changes
+    Ensure a log metric filter and alarm exist for changes to network gateways
+    Ensure a log metric filter and alarm exist for changes to Network Access Control Lists (NACL)
+    Ensure a log metric filter and alarm exist for security group changes
+    Ensure a log metric filter and alarm exist for usage of "root" account
+    Ensure IAM policies are attached only to groups or roles
+    Ensure VPC flow logging is enabled in all VPCs
+    Ensure CloudTrail is enabled in all regions
+    Ensure the default security group of every VPC restricts all traffic
+    Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389
+    Ensure no security groups allow ingress from 0.0.0.0/0 to port 22
+    Ensure hardware MFA is enabled for the "root" account
+
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+Restrict S3 access to https only
+Encrypt S3 buckets and EBS volumes
+Allow ingress to specific ports and IPs
+Enable VPC flow logging and ELB logging
